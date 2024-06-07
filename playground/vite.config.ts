@@ -1,7 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+	optimizeDeps: {
+		// We don't want vite to optimize it, since it would ignore updates in dev mode
+		exclude: ['diesel-core'],
+	},
+	plugins: [react()],
+});

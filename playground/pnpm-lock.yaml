@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      diesel-core:
+        specifier: link:C:/Users/shale/projects/diesel/diesel-core
+        version: link:../diesel-core
       react:
         specifier: ^18.2.0
         version: 18.3.1
