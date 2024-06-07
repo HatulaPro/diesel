@@ -1,0 +1,20 @@
+{
+	"name": "diesel-core",
+	"version": "0.0.1",
+	"description": "A set of tools for programmers for creating simple DSLs",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "tsup src/index.ts --format cjs,esm --dts",
+		"lint": "tsc"
+	},
+	"keywords": [],
+	"author": "Shalev Raz Israel",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"tsup": "8.1.0",
+		"typescript": "4.9.4"
+	}
+}
