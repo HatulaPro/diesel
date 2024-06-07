@@ -1,10 +1,15 @@
-import { defineConfig } from 'vite';
+import { Plugin, defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+// Weird import for it to update in dev mode
+import { POC } from '../diesel-core/dist/index.mjs';
+
+const plugin: Plugin = {
+	name: 'Diesel Vite',
+	transform(code: string) {
+		return code.replace('%WOW%', `${POC}`);
+	},
+};
 
 export default defineConfig({
-	optimizeDeps: {
-		// We don't want vite to optimize it, since it would ignore updates in dev mode
-		exclude: ['diesel-core'],
-	},
-	plugins: [react()],
+	plugins: [plugin, react()],
 });
