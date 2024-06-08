@@ -1,5 +1,6 @@
 import './App.css';
-
+import { Diesel } from 'diesel-core/macros';
+const $num = Diesel.$num;
 function App() {
 	return (
 		<>
