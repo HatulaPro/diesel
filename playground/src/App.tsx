@@ -1,8 +1,8 @@
 import './App.css';
 import { $createMacro } from 'diesel-core/macros';
 
-const $num = $createMacro(() => {
-	return parseInt('12345');
+const $num = $createMacro((tokens) => {
+	return parseInt(tokens[0]);
 });
 
 function App() {

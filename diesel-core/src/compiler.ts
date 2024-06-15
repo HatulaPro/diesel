@@ -37,7 +37,7 @@ export class Compiler {
 				if (t.isIdentifier(path.node.tag)) {
 					const macro = getMacroByName(path.node.tag.name);
 					if (!macro) return;
-					const res = macro.func([]);
+					const res = macro.func([path.node.quasi.quasis[0].value.raw]);
 					path.replaceWith(t.valueToNode(res));
 				}
 			},
